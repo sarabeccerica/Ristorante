@@ -23,8 +23,7 @@ class GestioneDati:
         momentoBackup = datetime.datetime(year=momentoAvvio.year, month=momentoAvvio.month, day=momentoAvvio.day,\
                                           hour=0, minute=0, second=0)
         notSleepTime = time.mktime(momentoAvvio.timetuple()) - time.mktime(momentoBackup.timetuple())
-        #sleepTime = (60*60*24)-notSleepTime
-        sleepTime = 0
+        sleepTime = (60*60*24)-notSleepTime
         time.sleep(sleepTime)
         self.backupPrenotazioni()
         self.backupDipendenti()
